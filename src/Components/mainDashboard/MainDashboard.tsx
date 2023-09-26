@@ -33,7 +33,7 @@ const MainDashboard = () => {
       <div className="grid grid-cols-12">
         {/* Side bar area */}
         <div className="col-span-2">
-          <div className="sidebar-area px-[9px] pt-6 h-[100vh]">
+          <div className="sidebar-area px-[9px] pt-6 h-full">
             {/* Add new leave button */}
             <button className="w-full add-new-leave-btn py-[10px] pl-4 text-center cursor-pointer mb-16 border border-solid border-[#2c72e9] flex items-center gap-6">
               <Image src={plusIcon} alt="" />
@@ -168,7 +168,7 @@ const MainDashboard = () => {
 
               <TabsContent value="new-leave">
                 {/* Leave Application form */}
-                <div className="pl-20 pr-[163px] pt-6 bg-[#F2F0F4]">
+                <div className="pl-20 pr-[163px] pt-6 pb-14 bg-[#F2F0F4]">
                   <div className="mb-16">
                     <h3 className="mb-1">Application Form</h3>
                     <p>Please fill the below form to apply</p>
@@ -254,7 +254,7 @@ const MainDashboard = () => {
                     <div>
                       <p className="mb-4">Upload Document</p>
 
-                      <div className="flex">
+                      <div className="flex gap-4">
                         <div className="py-8 pl-[42px] pr-[49px] border-2 border-dashed border-[#AFC6FF] ">
                           <Image src={dragDrop} alt="" />
                           <h3>Drag & drop files</h3>
@@ -265,16 +265,16 @@ const MainDashboard = () => {
                         </div>
 
                         {/* uploaded files preview */}
-                        <div className="flex justify-between">
-                          <div className="border-2 rounded-sm py-[15px] pr-[21px] pl-[23px]">
+                        <div className="file-preview-area flex justify-between self-end gap-4">
+                          <div className="file-preview-1 border-2 rounded-sm py-[15px] pr-[21px] pl-[23px]">
                             <Image src={fileCrossIcon} alt="" />
                             <p>your-file-here.PDF</p>
                           </div>
-                          <div className="border-2 rounded-sm py-[15px] pr-[21px] pl-[23px]">
+                          <div className="file-preview-2 border-2 rounded-sm py-[15px] pr-[21px] pl-[23px]">
                             <Image src={fileCrossIcon} alt="" />
                             <p>your-file-here.PDF</p>
                           </div>
-                          <div className="border-2 rounded-sm py-[15px] pr-[21px] pl-[23px]">
+                          <div className="file-preview-3 border-2 rounded-sm py-[15px] pr-[21px] pl-[23px]">
                             <Image src={fileCrossIcon} alt="" />
                             <p>your-file-here.PDF</p>
                           </div>
