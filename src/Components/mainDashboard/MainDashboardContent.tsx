@@ -1,80 +1,76 @@
 import React from "react";
 
 import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
 } from "@/shadcn_components/ui/tabs";
-
 
 import AllLeaveCategories from "../AllLeaveCategories";
 import ApplicationForm from "../ApplicationForm";
 
 const MainDashboardContent = () => {
+  return (
+    <div className="main-dashboard-area pt-9 pr-[121px] pl-[42px]">
+      <AllLeaveCategories />
 
-    return (
-        <div className="main-dashboard-area pt-9 pr-[121px] pl-[42px]">
+      {/* Leave Application Form starts */}
 
-            <AllLeaveCategories />
+      {/* Leave Application Form header */}
 
-            {/* Leave Application Form starts */}
+      <Tabs defaultValue="account" className=" ">
+        <TabsList className="pl-20">
+          <TabsTrigger
+            className="py-4 px-6 font-normal focus:font-semibold focus:text-[#2C72E9] focus:border-b-4  focus:border-blue-600 text-[16px]"
+            value="new-leave"
+          >
+            New Leave
+          </TabsTrigger>
 
-            {/* Leave Application Form header */}
+          <TabsTrigger
+            value="leave-status"
+            className="py-4 px-6 font-normal focus:font-semibold focus:text-[#2C72E9] focus:border-b-4  focus:border-blue-600 text-[16px]"
+          >
+            Leave Status
+          </TabsTrigger>
 
-            <Tabs defaultValue="account" className=" ">
-                <TabsList className="pl-20">
-                    <TabsTrigger
-                        className="py-4 px-6 focus:border-b-4  focus:border-blue-600"
-                        value="new-leave"
-                    >
-                        New Leave
-                    </TabsTrigger>
+          <TabsTrigger
+            value="balance"
+            className="py-4 px-6 font-normal focus:font-semibold focus:text-[#2C72E9] focus:border-b-4  focus:border-blue-600 text-[16px]"
+          >
+            Balance
+          </TabsTrigger>
+        </TabsList>
 
-                    <TabsTrigger
-                        value="leave-status"
-                        className="px-6 py-4 focus:border-b-4  focus:border-blue-600"
-                    >
-                        Leave Status
-                    </TabsTrigger>
+        {/* Based on clicking on the tab, route will be changed. First one is leave application form */}
+        <TabsContent value="new-leave">
+          {/* Leave Application form */}
+          <ApplicationForm />
+        </TabsContent>
+        <TabsContent value="leave-status">
+          <div className="pl-20 pr-[163px] pt-6 bg-[#F2F0F4]">
+            <p>
+              {" "}
+              <span className="text-red-400">Leave status</span>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo,
+              quam.
+            </p>
+          </div>
+        </TabsContent>
+        <TabsContent value="balance">
+          <div className="pl-20 pr-[163px] pt-6 bg-[#F2F0F4]">
+            <p>
+              {" "}
+              <span className="text-red-400">Balance</span>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo,
+              quam.
+            </p>
+          </div>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+};
 
-                    <TabsTrigger
-                        value="balance"
-                        className="px-6 py-4 focus:border-b-4  focus:border-blue-600"
-                    >
-                        Balance
-                    </TabsTrigger>
-                </TabsList>
-
-                {/* Based on clicking on the tab, route will be changed. First one is leave application form */}
-                <TabsContent value="new-leave">
-
-                    {/* Leave Application form */}
-                    <ApplicationForm />
-                </TabsContent>
-                <TabsContent value="leave-status">
-                    <div className="pl-20 pr-[163px] pt-6 bg-[#F2F0F4]">
-                        <p>
-                            {" "}
-                            <span className="text-red-400">Leave status</span>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                            Quo, quam.
-                        </p>
-                    </div>
-                </TabsContent>
-                <TabsContent value="balance">
-                    <div className="pl-20 pr-[163px] pt-6 bg-[#F2F0F4]">
-                        <p>
-                            {" "}
-                            <span className="text-red-400">Balance</span>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                            Quo, quam.
-                        </p>
-                    </div>
-                </TabsContent>
-            </Tabs>
-        </div>
-    )
-}
-
-export default MainDashboardContent
+export default MainDashboardContent;
